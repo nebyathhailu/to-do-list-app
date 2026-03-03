@@ -21,6 +21,7 @@ return [
 
     'allowed_origins' => [
         'https://to-do-list-app-two-eta.vercel.app',
+        'https://*.vercel.app',
         
         ],
 
