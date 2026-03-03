@@ -109,14 +109,14 @@ export default function LoginPage() {
             )}
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <Input label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} className='text-[16px] italic'  placeholder="Enter your email" required />
+              <Input label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} className='placeholder:text-[16px] placeholder:italic'  placeholder="Enter your email" required />
               <div className="relative">
                 <Input
                   label="Password"
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={e => setPassword(e.target.value)}
-                  className='text-[16px] italic'
+                  className='placeholder:text-[16px] placeholder:italic'
                   placeholder="Enter your password"
                   required
                 />

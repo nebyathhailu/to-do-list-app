@@ -120,15 +120,15 @@ export default function RegisterPage() {
             )}
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-              <Input label="Name"             name="name"                  value={form.name}        className='text-[16px] italic'          onChange={handleChange} placeholder="Enter your name"         required error={errors.name?.[0]} />
-              <Input label="Email"            name="email"     type="email" value={form.email}           className='text-[16px] italic'       onChange={handleChange} placeholder="Enter your email"  required error={errors.email?.[0]} />
+              <Input label="Name"             name="name"                  value={form.name}        className='placeholder:text-[16px] placeholder:italic'          onChange={handleChange} placeholder="Enter your name"         required error={errors.name?.[0]} />
+              <Input label="Email"            name="email"     type="email" value={form.email}           className='placeholder:text-[16px] placeholder:italic'       onChange={handleChange} placeholder="Enter your email"  required error={errors.email?.[0]} />
               <div className="relative">
                 <Input
                   label="Password"
                   name="password"
                   type={showPassword ? 'text' : 'password'}
                   value={form.password}
-                  className='text-[16px] italic'
+                  className='placeholder:text-[16px] placeholder:italic'
                   onChange={handleChange}
                   placeholder="Enter your password (min. 6 characters)"
                   required
@@ -150,7 +150,7 @@ export default function RegisterPage() {
                   name="password_confirmation"
                   type={showConfirmPassword ? 'text' : 'password'}
                   value={form.password_confirmation}
-                  className='text-[16px] italic'
+                  className='placeholder:text-[16px] placeholder:italic'
                   onChange={handleChange}
                   placeholder="Repeat password"
                   required

@@ -236,7 +236,7 @@ export default function LandingPage() {
                       value={form.title}
                       onChange={e => setForm({ ...form, title: e.target.value })}
                       placeholder="Add a task you want to accomplish"
-                      className={`${fieldCls} italic text-[16px]`} required
+                      className={`${fieldCls} placeholder:italic placeholder:text-[16px]`} required
                     />
                   </div>
 
@@ -249,7 +249,7 @@ export default function LandingPage() {
                       onChange={e => setForm({ ...form, description: e.target.value })}
                       placeholder="Add some details..."
                       rows={2}
-                      className={`${fieldCls} resize-none italic text-[16px]`}
+                      className={`${fieldCls} resize-none placeholder:italic placeholder:text-[16px]`}
                     />
                   </div>
 
@@ -289,7 +289,7 @@ export default function LandingPage() {
                         onChange={e => setSubtaskInput(e.target.value)}
                         onKeyDown={handleSubtaskKeyDown}
                         placeholder="Add a subtask, press Enter"
-                        className={`${fieldCls} flex-1 text-[16px] italic`}
+                        className={`${fieldCls} flex-1 placeholder:text-[16px] placeholder:italic`}
                       />
                       <button
                         type="button"
