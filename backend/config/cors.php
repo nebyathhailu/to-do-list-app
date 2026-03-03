@@ -20,7 +20,8 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'to-do-app-production-5b5c.up.railway.app'
+        'https://to-do-list-app-two-eta.vercel.app/',
+        
         ],
 
     'allowed_origins_patterns' => [],
