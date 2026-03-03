@@ -9,6 +9,8 @@
     },
     "build": {
       "cmds": [
+         "php artisan config:clear",
+        "php artisan cache:clear",
         "chmod -R 775 storage bootstrap/cache",
         "php artisan config:cache",
         "php artisan route:cache",
