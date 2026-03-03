@@ -1,68 +1,67 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --bg-base:        #1b0e20;
+  --bg-surface:     #44334a;
+  --bg-surface-60:  rgba(68,51,74,0.6);
+  --bg-surface-30:  rgba(68,51,74,0.3);
+  --bg-deep:        rgba(27,14,32,0.5);
+  --border-subtle:  rgba(141,119,168,0.2);
+  --border-mid:     rgba(141,119,168,0.4);
+  --border-strong:  #8d77a8;
+  --text-primary:   #d1c0ec;
+  --text-secondary: #c4addd;
+  --text-muted:     #8d77a8;
+  --text-faint:     rgba(141,119,168,0.6);
+  --accent:         #8d77a8;
+  --accent-hover:   #c4addd;
+  --accent-text:    #1b0e20;
+  --scrollbar-track:#1b0e20;
+  --scrollbar-thumb:#44334a;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+html:not(.dark) {
+  --bg-base:        #f4f0fa;
+  --bg-surface:     #e8e0f5;
+  --bg-surface-60:  rgba(232,224,245,0.8);
+  --bg-surface-30:  rgba(196,173,221,0.2);
+  --bg-deep:        rgba(212,200,235,0.5);
+  --border-subtle:  rgba(141,119,168,0.25);
+  --border-mid:     rgba(141,119,168,0.45);
+  --border-strong:  #8d77a8;
+  --text-primary:   #1b0e20;
+  --text-secondary: #44334a;
+  --text-muted:     #6b5680;
+  --text-faint:     rgba(68,51,74,0.5);
+  --accent:         #8d77a8;
+  --accent-hover:   #44334a;
+  --accent-text:    #f4f0fa;
+  --scrollbar-track:#e8e0f5;
+  --scrollbar-thumb:#c4addd;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* ── Base layer — Tailwind-managed resets and global defaults ── */
+@layer base {
+  html {
+    font-size: 150%;
+    font-family: 'Playfair Display', Georgia, serif;
   }
-  a:hover {
-    color: #747bff;
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  button {
-    background-color: #f9f9f9;
+  h1, h2, h3, h4, h5 {
+    font-family: inherit;
   }
+}
+
+/* ── Utilities layer — custom scrollbar ── */
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar       { width: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 }
