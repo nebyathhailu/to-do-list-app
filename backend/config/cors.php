@@ -19,7 +19,9 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [
+        'to-do-app-production-5b5c.up.railway.app'
+        ],
 
     'allowed_origins_patterns' => [],
 
