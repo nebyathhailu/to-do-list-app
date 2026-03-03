@@ -2,7 +2,7 @@
 
 > **Task management, simplified.** Plan with clarity, track your progress, and stop feeling overwhelmed.
 
-🔗 **Live App:** `[URL](https://to-do-list-app-two-eta.vercel.app)`
+🔗 **Live App:** [URL](https://to-do-list-app-two-eta.vercel.app)
 
 ---
 
