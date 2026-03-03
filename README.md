@@ -8,7 +8,7 @@
 
 ## Overview
 
-To-Do App is a full-stack productivity app built around the idea that task management should feel calm, not stressful. It lets you organize tasks by category and energy level, break them into subtasks, and track your streaks over time — all wrapped in a dark/light themed interface that actually looks good.
+To-Do App is a full-stack productivity app built using Laravel for backend and React for frontend. It lets you organize tasks by category and energy level, break them into subtasks, and track your streaks over time — all wrapped in a dark/light themed interface.
 
 The app supports a guest mode on the landing page: visitors can create a task without an account, and it gets carried over automatically when they register.
 
