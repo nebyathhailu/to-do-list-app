@@ -4,7 +4,7 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import api from '../utils/api';
 
 const fieldCls = 'w-full px-3 py-2.5 rounded-lg text-sm transition-all focus:outline-none bg-[var(--bg-deep)] text-[var(--text-primary)] border border-[var(--border-subtle)] focus:border-[var(--border-strong)]';
-const labelCls = 'block text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--text-muted)] mb-1.5';
+const labelCls = 'block text-[16px] font-bold uppercase tracking-[0.12em] text-[var(--text-muted)] mb-1.5';
 
 function RegisterPrompt({ message, onDismiss, onNavigate }) {
   return (
@@ -216,8 +216,18 @@ export default function LandingPage() {
             ) : (
               /* Guest task form */
               <>
-                <h2 className="text-2xl lg:text-3xl font-extrabold text-(--text-primary) mb-2">Try it now</h2>
-                <p className="text-sm text-(--text-muted) mb-7">No account needed to get started.</p>
+              <div className='flex justify-between items-center'>
+                  <h2 className="text-2xl lg:text-3xl font-extrabold text-(--text-primary) mb-2">Try it now</h2>
+                  <p className="text-center text-xs text-(--text-muted)">
+                  Already have an account?{' '}
+                  <button
+                    onClick={() => navigate('/login')}
+                    className="text-(--text-secondary) font-semibold underline underline-offset-2 hover:text-(--text-primary) transition-colors"
+                  >
+                    Sign in
+                  </button>
+                </p>
+              </div>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <div>
@@ -225,8 +235,8 @@ export default function LandingPage() {
                     <input
                       value={form.title}
                       onChange={e => setForm({ ...form, title: e.target.value })}
-                      placeholder="e.g. Finish the project report"
-                      className={fieldCls} required
+                      placeholder="Add a task you want to accomplish"
+                      className={`${fieldCls} italic text-[16px]`} required
                     />
                   </div>
 
@@ -239,7 +249,7 @@ export default function LandingPage() {
                       onChange={e => setForm({ ...form, description: e.target.value })}
                       placeholder="Add some details..."
                       rows={2}
-                      className={`${fieldCls} resize-none`}
+                      className={`${fieldCls} resize-none italic text-[16px]`}
                     />
                   </div>
 
@@ -279,7 +289,7 @@ export default function LandingPage() {
                         onChange={e => setSubtaskInput(e.target.value)}
                         onKeyDown={handleSubtaskKeyDown}
                         placeholder="Add a subtask, press Enter"
-                        className={`${fieldCls} flex-1`}
+                        className={`${fieldCls} flex-1 text-[16px] italic`}
                       />
                       <button
                         type="button"
@@ -287,8 +297,7 @@ export default function LandingPage() {
                         disabled={!subtaskInput.trim()}
                         className="px-3 py-2.5 rounded-lg text-sm font-bold transition-all shrink-0
                           disabled:opacity-30 disabled:cursor-not-allowed"
-                        style={{ backgroundColor: 'var(--bg-surface-60)', border: '1px solid var(--border-subtle)', color: 'var(--text-secondary)' }}
-                      >
+style={{ backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border-mid)', color: 'var(--text-primary)' }}                      >
                         +
                       </button>
                     </div>
@@ -329,21 +338,7 @@ export default function LandingPage() {
                   </button>
                 </form>
 
-                <div className="flex items-center gap-3 my-6">
-                  <div className="flex-1 h-px bg-(--border-subtle)" />
-                  <span className="text-xs text-(--text-faint)">or</span>
-                  <div className="flex-1 h-px bg-(--border-subtle)" />
-                </div>
-
-                <p className="text-center text-xs text-(--text-muted)">
-                  Already have an account?{' '}
-                  <button
-                    onClick={() => navigate('/login')}
-                    className="text-(--text-secondary) font-semibold underline underline-offset-2 hover:text-(--text-primary) transition-colors"
-                  >
-                    Sign in
-                  </button>
-                </p>
+              
               </>
             )}
           </div>

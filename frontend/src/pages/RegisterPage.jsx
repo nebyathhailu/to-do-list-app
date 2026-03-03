@@ -4,6 +4,23 @@ import { useAuth } from '../context/AuthContext';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import Input from '../components/ui/Input';
 
+function EyeIcon({ visible }) {
+  return visible ? (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+      <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+      <line x1="1" y1="1" x2="23" y2="23"/>
+    </svg>
+  ) : (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+  );
+}
+
 export default function RegisterPage() {
   const [form, setForm]       = useState({ name: '', email: '', password: '', password_confirmation: '' });
   const [errors, setErrors]   = useState({});
@@ -12,6 +29,8 @@ export default function RegisterPage() {
   const [guestTask, setGuestTask] = useLocalStorage('guest_task', null);
   const navigate = useNavigate();
   const location = useLocation();
+  const [showPassword, setShowPassword]     = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -101,10 +120,51 @@ export default function RegisterPage() {
             )}
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-              <Input label="Name"             name="name"                  value={form.name}                  onChange={handleChange} placeholder="Jane Doe"         required error={errors.name?.[0]} />
-              <Input label="Email"            name="email"     type="email" value={form.email}                 onChange={handleChange} placeholder="you@example.com"  required error={errors.email?.[0]} />
-              <Input label="Password"         name="password"  type="password" value={form.password}           onChange={handleChange} placeholder="Min. 6 characters" required error={errors.password?.[0]} />
-              <Input label="Confirm Password" name="password_confirmation" type="password" value={form.password_confirmation} onChange={handleChange} placeholder="Repeat password" required error={errors.password_confirmation} />
+              <Input label="Name"             name="name"                  value={form.name}        className='text-[16px] italic'          onChange={handleChange} placeholder="Enter your name"         required error={errors.name?.[0]} />
+              <Input label="Email"            name="email"     type="email" value={form.email}           className='text-[16px] italic'       onChange={handleChange} placeholder="Enter your email"  required error={errors.email?.[0]} />
+              <div className="relative">
+                <Input
+                  label="Password"
+                  name="password"
+                  type={showPassword ? 'text' : 'password'}
+                  value={form.password}
+                  className='text-[16px] italic'
+                  onChange={handleChange}
+                  placeholder="Enter your password (min. 6 characters)"
+                  required
+                  error={errors.password?.[0]}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-8.5 text-(--text-muted) hover:text-(--text-primary) transition-colors"
+                  tabIndex={-1}
+                >
+                  <EyeIcon visible={showPassword} />
+                </button>
+              </div>
+
+              <div className="relative">
+                <Input
+                  label="Confirm Password"
+                  name="password_confirmation"
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  value={form.password_confirmation}
+                  className='text-[16px] italic'
+                  onChange={handleChange}
+                  placeholder="Repeat password"
+                  required
+                  error={errors.password_confirmation}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-8.5 text-(--text-muted) hover:text-(--text-primary) transition-colors"
+                  tabIndex={-1}
+                >
+                  <EyeIcon visible={showPassword} />
+                </button>
+              </div>
               <button
                 type="submit" disabled={loading}
                 className="w-full mt-2 py-3 rounded-xl text-sm font-bold tracking-wide transition-all
