@@ -52,11 +52,11 @@ The app supports a guest mode on the landing page: visitors can create a task wi
 
 ## Screenshots
 
-> Add screenshots here — landing page, dashboard, and mobile view recommended.
-
 | Landing | Dashboard | Mobile |
 |---|---|---|
-| _(screenshot)_ | _(screenshot)_ | _(screenshot)_ |
+| _(<img width="1682" height="963" alt="Screenshot from 2026-03-04 17-57-58" src="https://github.com/user-attachments/assets/6270b490-7828-4db0-9079-5e66002dec3d" />
+)_ | _(<img width="1808" height="857" alt="Screenshot from 2026-03-04 17-58-57" src="https://github.com/user-attachments/assets/0ac56666-14c0-4e3e-bec0-ef5d5ff39731" />
+)_ | _(<img width="413" height="874" alt="Screenshot from 2026-03-04 18-05-35" src="https://github.com/user-attachments/assets/274b60e5-8997-40a8-a05a-916ba4df8b3e" />)_ |
 
 ---
 
@@ -176,6 +176,7 @@ backend/
 │   ├── Http/Controllers/
 │   │   ├── AuthController.php
 │   │   ├── TaskController.php
+
 │   │   ├── SubtaskController.php
 │   │   ├── CategoryController.php
 │   │   └── DashboardController.php
