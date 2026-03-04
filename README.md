@@ -52,11 +52,9 @@ The app supports a guest mode on the landing page: visitors can create a task wi
 
 ## Screenshots
 
-<div align="center">
-  <img width="32%" src="https://github.com/user-attachments/assets/6270b490-7828-4db0-9079-5e66002dec3d"><br>Landing
-  <img width="32%" src="https://github.com/user-attachments/assets/0ac56666-14c0-4e3e-bec0-ef5d5ff39731"><br>Dashboard
-  <img width="32%" src="https://github.com/user-attachments/assets/274b60e5-8997-40a8-a05a-916ba4df8b3e"><br>Mobile
-</div>
+| Landing                          | Dashboard                          | Mobile                             |
+|----------------------------------|------------------------------------|------------------------------------|
+| <img width="600" alt="Landing screenshot" src="https://github.com/user-attachments/assets/6270b490-7828-4db0-9079-5e66002dec3d"> | <img width="600" alt="Dashboard screenshot" src="https://github.com/user-attachments/assets/0ac56666-14c0-4e3e-bec0-ef5d5ff39731"> | <img width="300" alt="Mobile screenshot" src="https://github.com/user-attachments/assets/274b60e5-8997-40a8-a05a-916ba4df8b3e"> |
 
 ---
 
